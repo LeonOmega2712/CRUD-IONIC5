@@ -1,32 +1,18 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Mis notas
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
   <ion-card>
     <ion-card-header>
       <ion-card-title>Notas</ion-card-title>
     </ion-card-header>
     <ion-list>
-      <ion-item *ngFor="let note of (notes | async)">
+      <ion-item *ngFor="let note of (notes | async)" [routerLink]="'/view-note/'+note.id">
         <ion-label>
           <h1>{{note.title}}</h1>
           <p>{{note.content}}</p>
         </ion-label>
-        <ion-button
-          fill="outline"
-          slot="end"
-          [routerLink]="'/view-note/'+note.id"
-          >Ver</ion-button
-        >
       </ion-item>
     </ion-list>
   </ion-card>
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
     <ion-fab-button [routerLink]="'/add-note'">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
