@@ -1,7 +1,7 @@
 <ion-content [fullscreen]="true">
   <ion-card>
     <ion-card-header>
-      <ion-card-title>Notas</ion-card-title>
+        <ion-card-title>Notas</ion-card-title>
     </ion-card-header>
     <ion-list>
       <ion-item *ngFor="let note of (notes | async)" [routerLink]="'/view-note/'+note.id">

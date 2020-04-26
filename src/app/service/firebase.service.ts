@@ -1,15 +1,15 @@
-import { Injectable } from "@angular/core";
-import { Observable } from "rxjs";
-import { Note } from "../modal/Note";
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Note } from '../modal/Note';
 import {
   AngularFirestore,
   AngularFirestoreCollection,
   DocumentReference,
-} from "@angular/fire/firestore";
-import { map, take } from "rxjs/operators";
+} from '@angular/fire/firestore';
+import { map, take } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
 })
 export class FirebaseService {
   private notes: Observable<Note[]>;
@@ -17,7 +17,7 @@ export class FirebaseService {
 
   constructor(private afs: AngularFirestore) {
     // Definir la colección
-    this.noteCollection = this.afs.collection<Note>("notes");
+    this.noteCollection = this.afs.collection<Note>('notes');
 
     // Obtener la colección de datos
     this.notes = this.noteCollection.snapshotChanges().pipe(
