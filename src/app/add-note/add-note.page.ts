@@ -26,7 +26,7 @@ export class AddNotePage implements OnInit {
   ngOnInit() {
   }
 
-  addNote(){
+  addNote() {
     this.fbService.addNote(this.note).then(() => {
       this.router.navigateByUrl('/');
     }, err => {

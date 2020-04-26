@@ -1,17 +1,36 @@
-<ion-header>
-  <ion-toolbar color="primary">
-    <ion-title>Modificar nota</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-  <ion-list>
-    <ion-item>
-      <ion-input placeholder="Título" [(ngModel)]="note.title"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-textarea rows="6" [(ngModel)]="note.content" placeholder="Escriba aquí..."></ion-textarea>
-    </ion-item>
-  </ion-list>
-  <ion-button color="primary" expand="full" (click)="updateNote()">Actualizar</ion-button>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Editando...</ion-card-subtitle>
+      <ion-card-title>
+        <ion-input
+          clearInput
+          placeholder="Título"
+          [(ngModel)]="note.title"
+        ></ion-input>
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-textarea
+        rows="6"
+        [(ngModel)]="note.content"
+        placeholder="Escriba aquí..."
+      ></ion-textarea>
+
+    </ion-card-content>
+  </ion-card>
+
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="updateNote()" color="success">
+      <ion-icon name="save-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button [routerLink]="'/home'" color="danger">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
 </ion-content>
