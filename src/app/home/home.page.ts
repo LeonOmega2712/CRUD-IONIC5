@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Note } from '../modal/Note';
 import { FirebaseService } from '../service/firebase.service';
 
 @Component({
